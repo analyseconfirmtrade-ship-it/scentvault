@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -12,29 +12,40 @@ class WelcomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(32.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  'Velora',
-                  style: TextStyle(
-                    fontSize: 42,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 2,
-                  ),
-                ),
-                SizedBox(height: 16),
-                Text(
-                  'Discover. Collect. Experience.',
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 48),
-                ElevatedButton(
-                  onPressed: null,
-                  child: Text('Get Started'),
-                ),
-              ],
+              children: [
+  Text(
+    'V E L O R A',
+    style: GoogleFonts.cinzel(
+  fontSize: 44,
+  fontWeight: FontWeight.w600,
+  letterSpacing: 5,
+),
+  ),
+  SizedBox(height: 48),
+
+  Text(
+    'Discover.',
+    style: TextStyle(fontSize: 20),
+  ),
+  SizedBox(height: 12),
+
+  Text(
+    'Collect.',
+    style: TextStyle(fontSize: 20),
+  ),
+  SizedBox(height: 12),
+
+  Text(
+    'Experience.',
+    style: TextStyle(fontSize: 20),
+  ),
+  SizedBox(height: 64),
+
+  ElevatedButton(
+    onPressed: null,
+    child: Text('Get Started'),
+  ),
+],
             ),
           ),
         ),

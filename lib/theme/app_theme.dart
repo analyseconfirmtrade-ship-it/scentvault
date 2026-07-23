@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+import 'app_colors.dart';
 class AppTheme {
   static ThemeData get darkTheme {
     return ThemeData(
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: const Color(0xFF171717),
+      scaffoldBackgroundColor: AppColors.background,
       colorScheme: ColorScheme.fromSeed(
-        seedColor: const Color(0xFFC8A977),
+        seedColor: AppColors.gold,
         brightness: Brightness.dark,
+      ),
+      textTheme: GoogleFonts.manropeTextTheme(
+        ThemeData.dark().textTheme,
       ),
       useMaterial3: true,
     );
