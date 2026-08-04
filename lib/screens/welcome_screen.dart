@@ -7,8 +7,8 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
+  body: SafeArea(
+       child: Center(
           child: Padding(
             padding: const EdgeInsets.all(32.0),
             child: Column(
@@ -19,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
                   style: GoogleFonts.cinzel(
                     fontSize: 48,
                     fontWeight: FontWeight.w600,
-                    letterSpacing: 5,
+                    letterSpacing: 6,
                   ),
                 ),
                 SizedBox(height: 48),
