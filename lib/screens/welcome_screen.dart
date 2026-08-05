@@ -16,7 +16,7 @@ bool _showCollect = false;
 bool _showExperience = false;
 bool _showButton = false;
  
-  @override
+@override
 void initState() {
   super.initState();
 
@@ -25,8 +25,14 @@ void initState() {
       _showLogo = true;
     });
   });
-}
 
+  Future.delayed(const Duration(milliseconds: 900), () {
+    if (!mounted) return;
+    setState(() {
+      _showDiscover = true;
+    });
+  });
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +57,14 @@ void initState() {
 ),
                 SizedBox(height: 48),
 
-                Text('Discover.', style: TextStyle(fontSize: 20)),
+              AnimatedOpacity(
+  opacity: _showDiscover ? 1.0 : 0.0,
+  duration: const Duration(milliseconds: 800),
+  child: const Text(
+    'Discover.',
+    style: TextStyle(fontSize: 20),
+  ),
+),
                 SizedBox(height: 12),
 
                 Text('Collect.', style: TextStyle(fontSize: 20)),
