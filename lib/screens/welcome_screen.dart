@@ -1,8 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
+
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+
+bool _showLogo = false;
+bool _showDiscover = false;
+bool _showCollect = false;
+bool _showExperience = false;
+bool _showButton = false;
+ 
+  @override
+void initState() {
+  super.initState();
+
+  Future.delayed(const Duration(milliseconds: 400), () {
+    setState(() {
+      _showLogo = true;
+    });
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +37,18 @@ class WelcomeScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'V E L O R A',
-                  style: GoogleFonts.cinzel(
-                    fontSize: 48,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 6,
-                  ),
-                ),
+               AnimatedOpacity(
+  opacity: _showLogo ? 1.0 : 0.0,
+  duration: const Duration(milliseconds: 800),
+  child: Text(
+    'V E L O R A',
+    style: GoogleFonts.cinzel(
+      fontSize: 48,
+      fontWeight: FontWeight.w600,
+      letterSpacing: 6,
+    ),
+  ),
+),
                 SizedBox(height: 48),
 
                 Text('Discover.', style: TextStyle(fontSize: 20)),
